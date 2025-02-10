@@ -6,47 +6,114 @@
   <title>Joey Gumbanjera - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom Styles */
+    /* Background Animation */
     body {
-      background: #1E1E2E;
+      background: linear-gradient(120deg, #0F172A, #1E293B);
+      overflow: hidden;
       color: #F8F8F2;
+      font-family: 'Arial', sans-serif;
     }
-    h1, h2 {
-      color: #8BE9FD;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .highlight {
-      color: #FF79C6;
-    }
-    .progress-container {
-      max-width: 600px;
-      margin: 20px auto;
-      text-align: left;
-    }
-    .progress-label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    .progress-bar {
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: #44475A;
-      height: 20px;
-      border-radius: 10px;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 121, 198, 0.2);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .circle:nth-child(2) {
+      background: rgba(139, 233, 253, 0.2);
+      width: 150px;
+      height: 150px;
+      left: 30%;
+      animation-delay: 2s;
+    }
+
+    .circle:nth-child(3) {
+      background: rgba(80, 250, 123, 0.2);
+      width: 200px;
+      height: 200px;
+      top: 20%;
+      left: 50%;
+      animation-delay: 4s;
+    }
+
+    .circle:nth-child(4) {
+      background: rgba(255, 184, 108, 0.2);
+      width: 120px;
+      height: 120px;
+      bottom: 10%;
+      left: 10%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Hero Section Styling */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
       position: relative;
     }
-    .progress {
-      height: 100%;
-      border-radius: 10px;
-      background: linear-gradient(to right, #8BE9FD, #50FA7B);
-      text-align: right;
-      line-height: 20px;
-      padding-right: 10px;
-      color: #1E1E2E;
+
+    .hero-title {
+      font-size: 4rem;
       font-weight: bold;
+      color: #8BE9FD;
     }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #A6ACCD;
+      margin: 1rem 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #FF79C6;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #FF92D0;
+    }
+
+    /* Remaining Sections Styling */
+    section {
+      padding: 80px 20px;
+    }
+
     footer {
       background: #282A36;
       padding: 20px;
@@ -56,102 +123,67 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 fixed w-full z-10 shadow-lg">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <h1 class="text-xl font-bold">Joey Gumbanjera</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#about" class="hover:text-blue-400">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="#certifications" class="hover:text-blue-400">Certifications</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Animated Background -->
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
 
   <!-- Hero Section -->
-  <header id="hero" class="h-screen flex items-center justify-center text-center px-6">
-    <div>
-      <h2 class="text-4xl sm:text-6xl font-extrabold">
-        Hello, My name is <span class="highlight">Joey Gumbanjera</span>
-      </h2>
-      <p class="text-xl sm:text-2xl mt-4">
-        I am a <span class="highlight">Data Analyst | Developer | Problem Solver</span>
-      </p>
-      <p class="mt-6 text-gray-300 max-w-xl mx-auto">
-        I specialize in Python, SQL, Power BI, and Tableau, with a passion for creating data-driven solutions.
-      </p>
+  <header class="hero">
+    <h1 class="hero-title">Joey Gumbanjera</h1>
+    <p class="hero-subtitle">Data Analyst | Business Analyst | Business Intelligence Analyst</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">My Projects</a>
+      <a href="#contact" class="btn">Contact Me</a>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 class="text-3xl font-bold">About Me</h2>
-    <img src="profile.jpg" alt="Joey Gumbanjera" class="w-48 h-48 rounded-full mx-auto shadow-lg mt-6">
-    <p class="text-gray-300 mt-6 max-w-3xl mx-auto">
-      I’m a Computer Engineering graduate with strong skills in data analysis, visualization, and cloud technologies. I enjoy solving real-world problems through data and software development.
-    </p>
-  </section>
-
-  <!-- Skills Section (With Percentages) -->
-  <section id="skills" class="bg-gray-800">
-    <h2 class="text-3xl font-bold">Skills</h2>
-    <div class="progress-container">
-      <div class="progress-label">Python</div>
-      <div class="progress-bar"><div class="progress" style="width: 90%;">90%</div></div>
-
-      <div class="progress-label">SQL & Databases</div>
-      <div class="progress-bar"><div class="progress" style="width: 85%;">85%</div></div>
-
-      <div class="progress-label">Power BI</div>
-      <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
-
-      <div class="progress-label">Tableau</div>
-      <div class="progress-bar"><div class="progress" style="width: 75%;">75%</div></div>
-
-      <div class="progress-label">API Development</div>
-      <div class="progress-bar"><div class="progress" style="width: 70%;">70%</div></div>
-
-      <div class="progress-label">Excel Analytics</div>
-      <div class="progress-bar"><div class="progress" style="width: 80%;">80%</div></div>
+  <!-- Who is Joey Section -->
+  <section id="who">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+      <img src="profile.jpg" alt="Joey Gumbanjera" style="width: 250px; height: 250px; border-radius: 50%; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);">
+      <div>
+        <h2 class="text-3xl font-bold">Who is Joey?</h2>
+        <p>
+          I am a Warsaw, Poland-based Data Analyst specializing in transforming data into actionable insights. With expertise in Python, SQL, Power BI, and Tableau, I help organizations make data-driven decisions.
+        </p>
+        <p class="mt-4">
+          Let's connect:  
+          <a href="https://www.linkedin.com/in/joey-gumbanjera-95849922b/" class="text-blue-400">LinkedIn</a> |  
+          <a href="https://github.com/JRGumbaz" class="text-blue-400">GitHub</a>
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2 class="text-3xl font-bold">Projects</h2>
-    <ul class="space-y-6 text-lg mt-6">
-      <li>📌 <a href="https://github.com/JRGumbaz/EDA-MTCARS" class="text-blue-400">EDA-MTCARS (R Project)</a> - Exploratory data analysis on car datasets.</li>
-      <li>📌 <a href="https://github.com/JRGumbaz/China-Currency-GDP-Analysis" class="text-blue-400">China Currency & GDP Analysis</a> - Jupyter Notebook analysis of China's economic trends.</li>
-      <li>📌 <a href="https://github.com/JRGumbaz/indoor-tracking" class="text-blue-400">Indoor Tracking System</a> - Real-time visualization for warehouse tracking.</li>
-      <li>📌 <a href="https://github.com/JRGumbaz/financial-analytics" class="text-blue-400">Financial Data Dashboard</a> - Business intelligence dashboard for financial trends.</li>
-    </ul>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="bg-gray-800">
-    <h2 class="text-3xl font-bold">Certifications</h2>
-    <ul class="space-y-4 text-lg mt-6">
-      <li>📜 Advanced Excel Dashboard Design – Maven Analytics</li>
-      <li>📜 MySQL Data Analysis – Maven Analytics</li>
-      <li>📜 Excel Pivot Tables – Maven Analytics</li>
-      <li>📜 Restaurant Order Analysis – Maven Analytics</li>
-      <li>📜 Coffee Shop Sales Dashboard – Maven Analytics</li>
-      <li>📜 Thinking Like an Analyst – Maven Analytics</li>
-    </ul>
+    <h2 class="text-3xl font-bold text-center">Projects</h2>
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #282A36; border-radius: 10px; margin-top: 20px;">
+      <h3>EDA-MTCARS (R Project)</h3>
+      <p>Exploratory Data Analysis on car datasets using R.</p>
+      <a href="https://github.com/JRGumbaz/EDA-MTCARS" class="text-blue-400">View on GitHub</a>
+    </div>
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #282A36; border-radius: 10px; margin-top: 20px;">
+      <h3>China Currency & GDP Analysis</h3>
+      <p>Jupyter Notebook project analyzing China’s economic trends and currency performance.</p>
+      <a href="https://github.com/JRGumbaz/China-Currency-GDP-Analysis" class="text-blue-400">View on GitHub</a>
+    </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2 class="text-3xl font-bold">Contact Me</h2>
-    <p class="text-gray-300 mt-4 text-lg">📧 Email: <a href="mailto:joeyrgumbaz@gmail.com" class="text-blue-400">joeyrgumbaz@gmail.com</a></p>
-    <p class="text-gray-300 text-lg">📞 Phone: <a href="tel:+48668391955" class="text-blue-400">+48 668 391 955</a></p>
+    <h2 class="text-3xl font-bold text-center">Contact Me</h2>
+    <p class="text-center mt-4">📧 Email: <a href="mailto:joeyrgumbaz@gmail.com" class="text-blue-400">joeyrgumbaz@gmail.com</a></p>
+    <p class="text-center">📞 Phone: <a href="tel:+48668391955" class="text-blue-400">+48 668 391 955</a></p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p class="text-gray-400">&copy; 2025 Joey Gumbanjera. All rights reserved.</p>
+    <p>&copy; 2025 Joey Gumbanjera. All rights reserved.</p>
   </footer>
 
 </body>
