@@ -13,17 +13,18 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white">
+
   <!-- Navbar -->
   <nav class="bg-gray-800 fixed w-full z-10 shadow-lg">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
       <h1 class="text-xl font-bold">Joey Gumbanjera</h1>
       <ul class="flex space-x-6">
-        <li><a href="about.html" class="hover:text-blue-400">About</a></li>
-        <li><a href="services.html" class="hover:text-blue-400">Services</a></li>
-        <li><a href="skills.html" class="hover:text-blue-400">Skills</a></li>
-        <li><a href="projects.html" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="certifications.html" class="hover:text-blue-400">Certifications</a></li>
-        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+        <li><a href="#about" class="hover:text-blue-400">About</a></li>
+        <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+        <li><a href="#skills" class="hover:text-blue-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+        <li><a href="#certifications" class="hover:text-blue-400">Certifications</a></li>
+        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -35,29 +36,93 @@
         Hello, My name is <span class="text-blue-400">Joey Gumbanjera</span>
       </h2>
       <p class="text-xl sm:text-2xl mt-4">
-        And I'm a <span class="text-blue-400">Data Analyst | Developer | Problem Solver</span>
+        I am a <span class="text-blue-400">Data Analyst | Developer | Problem Solver</span>
       </p>
       <p class="mt-6 text-gray-300 max-w-xl mx-auto">
-        I’m a computer engineering graduate with technical expertise in data analysis, system development, and problem-solving. I love creating impactful solutions for modern challenges.
+        I’m a Computer Engineering graduate with expertise in **Python, SQL, Power BI, and Tableau**, 
+        specializing in **data-driven decision-making and software solutions**.
       </p>
-      <div class="flex justify-center space-x-4 mt-6">
-        <a href="https://linkedin.com/in/joey-gumbanjera-95849922b" target="_blank" class="text-blue-500 hover:text-blue-400">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/JRGumbaz" target="_blank" class="text-gray-300 hover:text-gray-400">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="contact.html" class="mt-8 inline-block bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-600 transition">Contact Me</a>
-      </div>
     </div>
   </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">About Me</h2>
+      <img src="profile.jpg" alt="Joey Gumbanjera" class="w-48 h-48 rounded-full mx-auto shadow-lg mt-6">
+      <p class="text-gray-300 mt-6 max-w-3xl mx-auto">
+        I’m a **Computer Engineering graduate** with a strong background in **data analysis, software development, and IT support**.
+        My passion lies in building scalable solutions using **Python, R, SQL, and cloud technologies like Azure**.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 px-6 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">Services</h2>
+      <ul class="space-y-4 text-lg mt-6">
+        <li>✅ **Data Analytics & Visualization** – Power BI, Tableau, Excel dashboards.</li>
+        <li>✅ **Database Management & SQL Querying** – MySQL, Snowflake, PostgreSQL.</li>
+        <li>✅ **Software & Web Development** – Python, JavaScript, and API integration.</li>
+        <li>✅ **IT Support & Infrastructure Monitoring** – Help Desk, Azure, and O365 administration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-6 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">Skills</h2>
+      <ul class="grid grid-cols-2 gap-6 text-lg mt-6">
+        <li>💻 Python</li>
+        <li>📊 Power BI</li>
+        <li>🖥️ SQL & Database Management</li>
+        <li>📉 Risk Analysis & Forecasting</li>
+        <li>🔗 API Development (REST)</li>
+        <li>⚡ Agile Development</li>
+        <li>🔍 Debugging & Testing</li>
+        <li>🔐 Infrastructure Monitoring</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-6 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">Projects</h2>
+      <ul class="space-y-6 text-lg mt-6">
+        <li>📌 <a href="https://github.com/JRGumbaz/indoor-tracking" class="text-blue-400">Indoor Tracking System</a></li>
+        <li>📌 <a href="https://github.com/JRGumbaz/financial-analytics" class="text-blue-400">Financial Data Dashboard</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-16 px-6 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">Certifications</h2>
+      <ul class="space-y-4 text-lg mt-6">
+        <li>📜 Advanced Excel Dashboard Design – Maven Analytics</li>
+        <li>📜 MySQL Data Analysis – Maven Analytics</li>
+        <li>📜 Data Science Bootcamp – Udemy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white">Contact Me</h2>
+      <p class="text-gray-300 mt-4 text-lg">📧 Email: <a href="mailto:joeyrgumbaz@gmail.com" class="text-blue-400">joeyrgumbaz@gmail.com</a></p>
+      <p class="text-gray-300 text-lg">📞 Phone: <a href="tel:+48668391955" class="text-blue-400">+48 668 391 955</a></p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 py-6 text-center">
     <p class="text-gray-400">&copy; 2025 Joey Gumbanjera. All rights reserved.</p>
   </footer>
 
-  <!-- FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
