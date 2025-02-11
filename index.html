@@ -1,190 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joey Gumbanjera - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Background Animation */
-    body {
-      background: linear-gradient(120deg, #0F172A, #1E293B);
-      overflow: hidden;
-      color: #F8F8F2;
-      font-family: 'Arial', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joey Gumbanjera - Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
+        /* Animation Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-    .circle {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background: rgba(255, 121, 198, 0.2);
-      border-radius: 50%;
-      animation: float 10s infinite ease-in-out;
-    }
+        .animated-bg div {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(96, 165, 250, 0.1);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
 
-    .circle:nth-child(2) {
-      background: rgba(139, 233, 253, 0.2);
-      width: 150px;
-      height: 150px;
-      left: 30%;
-      animation-delay: 2s;
-    }
+        .animated-bg div:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
 
-    .circle:nth-child(3) {
-      background: rgba(80, 250, 123, 0.2);
-      width: 200px;
-      height: 200px;
-      top: 20%;
-      left: 50%;
-      animation-delay: 4s;
-    }
+        .animated-bg div:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
 
-    .circle:nth-child(4) {
-      background: rgba(255, 184, 108, 0.2);
-      width: 120px;
-      height: 120px;
-      bottom: 10%;
-      left: 10%;
-      animation-delay: 6s;
-    }
+        .animated-bg div:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
+        .animated-bg div:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
 
-    /* Hero Section Styling */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      position: relative;
-    }
+        .animated-bg div:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
 
-    .hero-title {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #8BE9FD;
-    }
+        .animated-bg div:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
 
-    .hero-subtitle {
-      font-size: 1.5rem;
-      color: #A6ACCD;
-      margin: 1rem 0;
-    }
+        .animated-bg div:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
 
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
+        .animated-bg div:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
 
-    .btn {
-      padding: 12px 24px;
-      background: #FF79C6;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
 
-    .btn:hover {
-      background: #FF92D0;
-    }
+        .gradient-text {
+            background: linear-gradient(45deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-    /* Remaining Sections Styling */
-    section {
-      padding: 80px 20px;
-    }
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-    footer {
-      background: #282A36;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #60a5fa;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+        }
+    </style>
 </head>
 <body>
+   <!-- Animated Background -->
+   <div class="animated-bg">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col">
+      <nav class="p-6 sticky top-0 bg-slate-900/80 backdrop-blur-sm z-50">
+          <div class="max-w-6xl mx-auto flex justify-between items-center">
+              <h1 class="text-2xl font-bold gradient-text">JG</h1>
+              <div class="space-x-8">
+                  <a href="#who" class="hover:text-blue-400 transition">Who is Joey</a>
+                  <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                  <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                  <a href="#certifications" class="hover:text-blue-400 transition">Certifications</a>
+                  <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+              </div>
+          </div>
+      </nav>
 
-  <!-- Animated Background -->
-  <div class="background">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+      <div class="flex-1 flex items-center justify-center text-center px-4">
+          <div>
+              <h1 class="text-5xl font-bold mb-6">
+                  Hi, I'm <span class="gradient-text">Joey Gumbanjera</span>
+              </h1>
+              <p class="text-xl text-gray-400 mb-8">Data Analyst | Business Analyst | Business Intelligence Specialist</p>
+              <div class="flex justify-center gap-4">
+                  <a href="#contact" class="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition">Get in Touch</a>
+                  <a href="#projects" class="px-8 py-3 bg-transparent border border-blue-500 rounded-lg hover:bg-blue-500/10 transition">View My Work</a>
+              </div>
+          </div>
+      </div>
   </div>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1 class="hero-title">Joey Gumbanjera</h1>
-    <p class="hero-subtitle">Data Analyst | Business Analyst | Business Intelligence Analyst</p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn">My Projects</a>
-      <a href="#contact" class="btn">Contact Me</a>
-    </div>
-  </header>
-
-  <!-- Who is Joey Section -->
-  <section id="who">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-      <img src="profile.jpg" alt="Joey Gumbanjera" style="width: 250px; height: 250px; border-radius: 50%; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);">
-      <div>
-        <h2 class="text-3xl font-bold">Who is Joey?</h2>
-        <p>
-          I am a Warsaw, Poland-based Data Analyst specializing in transforming data into actionable insights. With expertise in Python, SQL, Power BI, and Tableau, I help organizations make data-driven decisions.
-        </p>
-        <p class="mt-4">
-          Let's connect:  
-          <a href="https://www.linkedin.com/in/joey-gumbanjera-95849922b/" class="text-blue-400">LinkedIn</a> |  
-          <a href="https://github.com/JRGumbaz" class="text-blue-400">GitHub</a>
-        </p>
+    <!-- Who is Joey Section -->
+    <section id="who" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Who is Joey?</h2>
+          <div class="flex flex-col md:flex-row items-center gap-12">
+              <img src="profile.jpg" alt="Joey Gumbanjera" class="w-64 h-64 rounded-full object-cover shadow-xl">
+              <div class="max-w-xl">
+                  <p class="text-lg leading-relaxed text-gray-300 mb-4">
+                      Based in Warsaw, Poland, I am a final-year Computer Engineering student with a passion for data analysis and business intelligence. My journey hasn't been conventional – coming from a challenging background, I've learned the value of persistence and hard work in pursuing my dreams.
+                  </p>
+                  <p class="text-lg leading-relaxed text-gray-300 mb-4">
+                      Despite facing numerous obstacles, I've maintained my focus on excellence in both academics and professional development. My experience has taught me that data isn't just about numbers – it's about telling stories and finding solutions that make a real difference.
+                  </p>
+                  <div class="flex gap-6 mt-8">
+                      <a href="https://www.linkedin.com/in/joey-gumbanjera-95849922b/" class="social-icon">
+                          <i class="fab fa-linkedin text-2xl"></i>
+                      </a>
+                      <a href="https://github.com/JRGumbaz" class="social-icon">
+                          <i class="fab fa-github text-2xl"></i>
+                      </a>
+                      <a href="mailto:joeyrgumbaz@gmail.com" class="social-icon">
+                          <i class="fas fa-envelope text-2xl"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
       </div>
+  </section>
+  <section id="projects" class="py-20 px-4 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Data Analysis Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- MTCARS Analysis Project -->
+            <div class="project-card card rounded-xl overflow-hidden">
+                <img src="cars.jpg" alt="MTCARS Analysis" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">MTCARS Exploratory Data Analysis</h3>
+                    <p class="text-gray-400">Comprehensive analysis of the classic MTCARS dataset using R programming, focusing on vehicle performance metrics.</p>
+                </div>
+                <div class="project-overlay">
+                    <h4 class="font-semibold mb-2">Key Analysis Points:</h4>
+                    <ul class="list-disc list-inside text-sm text-gray-300 mb-4">
+                        <li>Statistical analysis of vehicle characteristics</li>
+                        <li>Correlation studies between performance metrics</li>
+                        <li>Data visualization using ggplot2</li>
+                        <li>Performance prediction modeling</li>
+                    </ul>
+                    <a href="https://github.com/JRGumbaz/EDA-MTCARS" class="text-blue-400 hover:text-blue-300">View Project →</a>
+                </div>
+            </div>
+
+            <!-- China Currency GDP Analysis -->
+            <div class="project-card card rounded-xl overflow-hidden">
+                <img src="china.jpg" alt="China Currency GDP Analysis" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">China Currency & GDP Analysis</h3>
+                    <p class="text-gray-400">In-depth analysis of the relationship between China's currency fluctuations and GDP growth patterns.</p>
+                </div>
+                <div class="project-overlay">
+                    <h4 class="font-semibold mb-2">Key Analysis Points:</h4>
+                    <ul class="list-disc list-inside text-sm text-gray-300 mb-4">
+                        <li>Time series analysis of currency trends</li>
+                        <li>GDP growth pattern visualization</li>
+                        <li>Economic indicator correlations</li>
+                        <li>Impact assessment of policy changes</li>
+                    </ul>
+                    <a href="https://github.com/JRGumbaz/China-Currency-GDP-Analysis" class="text-blue-400 hover:text-blue-300">View Project →</a>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Technical Skills</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+          <div class="card p-6 rounded-xl">
+              <h3 class="text-xl font-semibold mb-6">Data Analysis</h3>
+              <div class="space-y-6">
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>Python (Pandas, NumPy)</span>
+                          <span>90%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 90%"></div>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>R Programming</span>
+                          <span>85%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>Statistical Analysis</span>
+                          <span>85%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card p-6 rounded-xl">
+              <h3 class="text-xl font-semibold mb-6">Business Intelligence</h3>
+              <div class="space-y-6">
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>SQL & Database Management</span>
+                          <span>88%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 88%"></div>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>Power BI</span>
+                          <span>85%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 85%"></div>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between mb-2">
+                          <span>Advanced Excel</span>
+                          <span>90%</span>
+                      </div>
+                      <div class="skill-bar">
+                          <div class="skill-progress" style="width: 90%"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 px-4 bg-slate-900/50">
+      <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Professional Certifications</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+              <div class="card p-6 rounded-xl">
+                  <i class="fas fa-chart-line text-3xl mb-4 text-blue-400"></i>
+                  <h3 class="text-xl font-semibold mb-2">Advanced Excel Dashboard Design</h3>
+                  <p class="text-gray-400">Maven Analytics</p>
+              </div>
+              <div class="card p-6 rounded-xl">
+                  <i class="fas fa-database text-3xl mb-4 text-blue-400"></i>
+                  <h3 class="text-xl font-semibold mb-2">MySQL Data Analysis</h3>
+                  <p class="text-gray-400">Maven Analytics</p>
+              </div>
+              <div class="card p-6 rounded-xl">
+                  <i class="fas fa-table text-3xl mb-4 text-blue-400"></i>
+                  <h3 class="text-xl font-semibold mb-2">Excel Pivot Tables</h3>
+                  <p class="text-gray-400">Maven Analytics</p>
+              </div>
+              <!-- New Maven Analytics Certification -->
+              <div class="card p-6 rounded-xl">
+                  <i class="fas fa-brain text-3xl mb-4 text-blue-400"></i>
+                  <h3 class="text-xl font-semibold mb-2">Advanced Data Analytics Path</h3>
+                  <p class="text-gray-400">Maven Analytics</p>
+                  <p class="text-sm text-gray-500 mt-2">Python, SQL, Power BI, and Statistical Analysis</p>
+              </div>
+              <!-- New Udemy Certification -->
+              <div class="card p-6 rounded-xl">
+                  <i class="fas fa-laptop-code text-3xl mb-4 text-blue-400"></i>
+                  <h3 class="text-xl font-semibold mb-2">The Data Science Course: Complete Data Science Bootcamp</h3>
+                  <p class="text-gray-400">Udemy</p>
+                  <p class="text-sm text-gray-500 mt-2">Machine Learning, Statistics, and Data Visualization</p>
+              </div>
+          </div>
+      </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2 class="text-3xl font-bold text-center">Projects</h2>
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #282A36; border-radius: 10px; margin-top: 20px;">
-      <h3>EDA-MTCARS (R Project)</h3>
-      <p>Exploratory Data Analysis on car datasets using R.</p>
-      <a href="https://github.com/JRGumbaz/EDA-MTCARS" class="text-blue-400">View on GitHub</a>
-    </div>
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #282A36; border-radius: 10px; margin-top: 20px;">
-      <h3>China Currency & GDP Analysis</h3>
-      <p>Jupyter Notebook project analyzing China’s economic trends and currency performance.</p>
-      <a href="https://github.com/JRGumbaz/China-Currency-GDP-Analysis" class="text-blue-400">View on GitHub</a>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-slate-900">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 gradient-text">Let's Connect</h2>
+            <div class="space-y-4">
+                <p class="text-xl">
+                    <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                    <a href="mailto:joeyrgumbaz@gmail.com" class="hover:text-blue-400 transition">joeyrgumbaz@gmail.com</a>
+                </p>
+                <p class="text-xl">
+                    <i class="fas fa-phone mr-2 text-blue-400"></i>
+                    <a href="tel:+48668391955" class="hover:text-blue-400 transition">+48 668 391 955</a>
+                </p>
+                <p class="text-xl">
+                    <i class="fab fa-linkedin mr-2 text-blue-400"></i>
+                    <a href="https://www.linkedin.com/in/joey-gumbanjera-95849922b/" class="hover:text-blue-400 transition">LinkedIn Profile</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="text-3xl font-bold text-center">Contact Me</h2>
-    <p class="text-center mt-4">📧 Email: <a href="mailto:joeyrgumbaz@gmail.com" class="text-blue-400">joeyrgumbaz@gmail.com</a></p>
-    <p class="text-center">📞 Phone: <a href="tel:+48668391955" class="text-blue-400">+48 668 391 955</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Joey Gumbanjera. All rights reserved.</p>
-  </footer>
-
+    <footer class="py-8 text-center text-gray-400">
+        <p>&copy; 2025 Joey Gumbanjera. All rights reserved.</p>
+    </footer>
 </body>
 </html>
